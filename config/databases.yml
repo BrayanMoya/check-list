@@ -5,6 +5,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=check-list
+      dsn:      mysql:host=localhost;dbname=checklist
       username: root
       password: 
