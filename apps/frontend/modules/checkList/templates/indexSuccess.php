@@ -5,7 +5,7 @@
         <div class="widget-box">
           <div class="widget-title">
             <span class="icon"><i class="icon-th"></i></span>
-            <h5>Listado de CheckList</h5>
+            <h1>Listado de CheckList</h1>
           </div>
           <div class="widget-content nopadding">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
@@ -47,6 +47,13 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
+              <table class="table table-bordered data-table dataTable">
+                <tbody>
+                  <tr>
+                    <td><a href="<?php echo url_for('checkList/new') ?>">New</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -57,5 +64,3 @@
 
 
 <?php include_partial('pagination', array('pager' => $pager)) ?>
-
-<a href="<?php echo url_for('checkList/new') ?>">New</a>

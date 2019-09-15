@@ -41,6 +41,15 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
+
+              <table class="table table-bordered data-table dataTable">
+                <tbody>
+                  <tr>
+                    <td><a href="<?php echo url_for('template/new') ?>">New</a></td>
+                    <td><a href="<?php echo url_for('template/newCriterion') ?>">New Criterion</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -50,6 +59,3 @@
 </div>
 
 <?php include_partial('pagination', array('pager' => $pager)) ?>
-
-<a href="<?php echo url_for('template/new') ?>">New</a>
-<a href="<?php echo url_for('template/newCriterion') ?>">New Criterion</a>
