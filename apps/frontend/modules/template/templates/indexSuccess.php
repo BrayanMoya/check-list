@@ -26,7 +26,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($templates as $template) : ?>
+                  <?php foreach ($pager->getResults() as $template) : ?>
                     <tr>
                       <td><a href="<?php echo url_for('template/show?id=' . $template->getId()) ?>"><?php echo $template->getId() ?></a></td>
                       <td><?php echo $template->getName() ?></td>
