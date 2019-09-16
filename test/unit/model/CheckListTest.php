@@ -23,11 +23,11 @@ class CheckListTest extends PHPUnit_Framework_TestCase
 
   public function testGetNameWithPrefix()
   {
-    $result = $this->object->getCheckListById(2)
+    $result = $this->object->getCheckListById(1)
       ->getNameWithPrefix();
 
     $this->assertEquals(
-      'LDC 1-Lista de chequeo', $result);
+      'list test 1', $result);
   }
 
   public function testGetActiveCheckListInArray()
@@ -36,6 +36,8 @@ class CheckListTest extends PHPUnit_Framework_TestCase
     $this->markTestIncomplete(
       'This test has not been implemented yet.'
     );
+
+    //assertCount()​;
   }
 
   public function testGetInactiveCheckListInArray()

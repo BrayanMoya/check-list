@@ -65,14 +65,20 @@
       <?php echo $form->renderHiddenFields() ?>
     </div>
   </div>
-  <div class="row">
-    <div class="col m12">
-      &nbsp;<a href="<?php echo url_for('checkList/index') ?>">Back to list</a>
-      <?php if (!$form->getObject()->isNew()) : ?>
-        &nbsp;<?php echo link_to('Borrar', 'checkList/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
-      <?php endif; ?>
-      <input type="submit" value="Save" />
+  <table class="table table-bordered data-table dataTable">
+    <tbody>
+      <tr>
+        <div class="row">
+          <div class="col m12">
+          <td>&nbsp;<a href="<?php echo url_for('checkList/index') ?>">Back to list</a>
+            <?php if (!$form->getObject()->isNew()) : ?></td>
+            <td>&nbsp;<?php echo link_to('Borrar', 'checkList/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
+            <?php endif; ?>
+            <td><input type="submit" value="Save" /></td>
 
-    </div>
-  </div>
+          </div>
+        </div>
+      </tr>
+    </tbody>
+  </table>
 </form>

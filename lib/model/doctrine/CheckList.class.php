@@ -33,7 +33,7 @@ class CheckList extends BaseCheckList
    */
   public function getActiveCheckListInArray($checkListId)
   {
-    return Doctrine_Core::getTable('CheckList')->getActiveCheckList(3);
+    return Doctrine_Core::getTable('CheckList')->getActiveCheckList(1);
   }
 
   /**

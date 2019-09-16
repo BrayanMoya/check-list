@@ -1,5 +1,6 @@
 <div id="content">
   <div id="content-header">
+  
   </div>
   <div class="container-fluid">
     <div class="row-fluid">
@@ -67,10 +68,15 @@
               </table>
 
               <hr />
-
-              <a href="<?php echo url_for('checkList/edit?id=' . $check_list->getId()) ?>">Edit</a>
-              &nbsp;
-              <a href="<?php echo url_for('checkList/index') ?>">List</a>
+              <table class="table table-bordered data-table dataTable">
+                <tbody>
+                  <tr>
+                    <td><a href="<?php echo url_for('checkList/edit?id=' . $check_list->getId()) ?>">Edit</a></td>
+                    &nbsp;
+                    <td><a href="<?php echo url_for('checkList/index') ?>">List</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

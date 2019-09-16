@@ -55,10 +55,15 @@
               </table>
 
               <hr />
-
-              <a href="<?php echo url_for('template/edit?id=' . $template->getId()) ?>">Edit</a>
-              &nbsp;
-              <a href="<?php echo url_for('template/index') ?>">List</a>
+              <table class="table table-bordered data-table dataTable">
+                <tbody>
+                  <tr>
+                    <td><a href="<?php echo url_for('template/edit?id=' . $template->getId()) ?>">Edit</a></td>
+                    &nbsp;
+                    <td><a href="<?php echo url_for('template/index') ?>">List</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
