@@ -1,4 +1,7 @@
 <?php
+
+use PHPUnit\Framework\TestCase;
+
 include dirname(__FILE__) . '/../../bootstrap/doctrine.php';
 /**
  * Created by PhpStorm.
@@ -7,7 +10,7 @@ include dirname(__FILE__) . '/../../bootstrap/doctrine.php';
  * Time: 11:41 AM
  */
 
-class CheckListTest extends PHPUnit_Framework_TestCase
+class CheckListTest extends TestCase
 {
   private $object;
 
@@ -23,45 +26,52 @@ class CheckListTest extends PHPUnit_Framework_TestCase
 
   public function testGetNameWithPrefix()
   {
-    $result = $this->object->getCheckListById(1)
-      ->getNameWithPrefix();
+    $result = $this->object->getCheckListById(1);
 
-    $this->assertEquals(
-      'list test 1', $result);
+    $this->assertEquals('list test 1', $result);
   }
 
   public function testGetActiveCheckListInArray()
   {
     // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
+    //$this->markTestIncomplete(
+    //'This test has not been implemented yet.'
+    //);
+    $result = $this->object->getActiveCheckListInArray(1);
 
-    //assertCount()​;
+    $this->assertCount(2, $result);
   }
 
   public function testGetInactiveCheckListInArray()
   {
     // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
+    //$this->markTestIncomplete(
+    //'This test has not been implemented yet.'
+    //);
+    $result = $this->object->getInactiveCheckListInArray(1);
+
+    $this->assertCount(1, $result);
   }
 
   public function testHasCriteria()
   {
     // Remove the following lines when you implement this test.
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
+    //$this->markTestIncomplete(
+    //  'This test has not been implemented yet.'
+    //);
+    $result = $this->object->hasCriteria();
+    
+    $this->assertTrue($result);
   }
 
   public function testGetAllCriteriasByCheckListId()
   {
-    // Remove the following lines when you implement this test.
+     //Remove the following lines when you implement this test.
     $this->markTestIncomplete(
       'This test has not been implemented yet.'
     );
+
   }
 
+  
 }

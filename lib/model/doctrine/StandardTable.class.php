@@ -22,16 +22,25 @@ class StandardTable extends Doctrine_Table
      * @param bool $criterionToExclude
      * @return mixed
      */
-    public static function sumWeightByCheckList($templateId, $criterionToExclude = false)
+    public static function sumWeightByStandard($standardId, $criterionToExclude = false)
     {
-        $query = Doctrine_Query::create()->select('c.id, SUM(c.weight) as total')->from('Standard c')->where('c.template_id = ?',
-            $templateId);
+        $query = Doctrine_Query::create()->select('s.id, SUM(s.weight) as total')->from('Standard s')->where('s.id = ?',
+            $standardId);
 
         if ($criterionToExclude)
         {
-            $query->andWhereNotIn('c.id', [$criterionToExclude]);
+            $query->andWhereNotIn('s.id', [$criterionToExclude]);
         }
 
         return $query->fetchOne()->getTotal();
     }
+
+    Public function getAllCriteriasByTemplate($templateId, $hydrationMode = 2)
+  {
+    $query = Doctrine_Query::create()
+      ->from('Standard s')
+      ->where('s.template_id = ?', $templateId);
+
+    return $query->fetchOne(null, $hydrationMode);
+  }
 }

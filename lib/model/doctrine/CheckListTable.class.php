@@ -41,7 +41,7 @@ class CheckListTable extends Doctrine_Table
   {
     $query = Doctrine_Query::create()
       ->from('CheckList cl')
-      ->where('cl.status LIKE Active');
+      ->where('cl.status = ?', 1);
 
     return $query->execute(null, $hydrationMode);
   }
@@ -55,7 +55,7 @@ class CheckListTable extends Doctrine_Table
   {
     $query = Doctrine_Query::create()
       ->from('CheckList cl')
-      ->where('cl.status LIKE ?', 'Active');
+      ->where('cl.status = ?', 0);
 
     return $query->execute(null, $hydrationMode);
   }
@@ -70,8 +70,10 @@ class CheckListTable extends Doctrine_Table
   {
     $query = Doctrine_Query::create()
       ->from('CheckedStandard c')
-      ->where('c.check_list_id = ?', 3);
+      ->where('c.check_list_id = ?', $checkListId);
 
     return $query->fetchOne(null, $hydrationMode);
   }
+
+  
 }

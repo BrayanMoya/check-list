@@ -33,7 +33,8 @@ class CheckList extends BaseCheckList
    */
   public function getActiveCheckListInArray($checkListId)
   {
-    return Doctrine_Core::getTable('CheckList')->getActiveCheckList(1);
+    return Doctrine_Core::getTable('CheckList')
+    ->getActiveCheckList(3);
   }
 
   /**
@@ -41,7 +42,7 @@ class CheckList extends BaseCheckList
    */
   public function getInactiveCheckListInArray($checkListId)
   {
-    return Doctrine_Core::getTable('CheckList')->getInactiveCheckList($checkListId);
+    return Doctrine_Core::getTable('CheckList')->getInactiveCheckList(3);
   }
 
   /**
@@ -50,6 +51,7 @@ class CheckList extends BaseCheckList
   public function hasCriteria()
   {
     $criterias = $this->getCheckedStandards();
+    //$criterias = $this->getStandards();
 
     if (count($criterias) <= 0)
     {

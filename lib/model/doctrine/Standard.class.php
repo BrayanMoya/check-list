@@ -14,4 +14,14 @@
 class Standard extends BaseStandard
 {
 
+  public function getAllCriteriasByTemplate($templateId, $hydrationMode = 2)
+  {
+    return Doctrine_Core::getTable('Standard')->getAllCriteriasByTemplate($templateId, $hydrationMode);
+  }
+
+  public static function sumWeightByStandard($templateId, $criterionToExclude = false)
+  {
+    return Doctrine_Core::getTable('Standard')->sumWeightByStandard($templateId, $criterionToExclude);
+  }
+
 }
