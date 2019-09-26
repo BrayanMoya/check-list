@@ -17,17 +17,16 @@
     <!-- Favicon icon -->
     <title>Check list</title>
     <!-- Bootstrap Core CSS -->
-    <?php // use_javascript('')?>
-    <?php use_stylesheet('plugins/bootstrap/css/bootstrap.min.css')?>
-    <?php use_stylesheet('plugins/perfect-scrollbar/css/perfect-scrollbar.css')?>
+    <?php // use_javascript('')
+    ?>
+    <?php use_stylesheet('plugins/bootstrap/css/bootstrap.min.css') ?>
+    <?php use_stylesheet('plugins/perfect-scrollbar/css/perfect-scrollbar.css') ?>
 
-    <?php use_stylesheet('style.css')?>
-    <?php use_stylesheet('pages/dashboard1.css')?>
-    <?php use_stylesheet('pages/floating-label.css')?>
-    <?php use_stylesheet('colors/default-dark.css')?>
+    <?php use_stylesheet('style.css') ?>
+    <?php use_stylesheet('pages/dashboard1.css') ?>
+    <?php use_stylesheet('pages/floating-label.css') ?>
+    <?php use_stylesheet('colors/default-dark.css') ?>
 
-
-    <?php use_stylesheet("colors/default-dark.css") ?>
     <?php include_stylesheets(true) ?>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,10 +69,10 @@
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->
-                         <img src="/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                            <!-- dark Logo text -->
+                            <img src="/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo text -->
+                            <img src="/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -104,7 +103,8 @@
                                         <div class="dw-user-box">
                                             <div class="u-text">
                                                 <h4>Admin</h4>
-                                                <p class="text-muted">admin@tiqal.com</p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Logout</a></div>
+                                                <p class="text-muted">admin@tiqal.com</p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Logout</a>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -126,15 +126,23 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li>
-                            <a class="waves-effect waves-dark" href="<?php echo url_for('template/index') ?>" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">Plantillas</span></a>
-                        </li>
+                        <?php if ($sf_user->hasCredential('admin')) : ?>
+
+                            <li>
+                                <a class="waves-effect waves-dark" href="<?php echo url_for('sfGuardUser/index') ?>" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Usuarios</span></a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-dark" href="<?php echo url_for('sfGuardGroup/index') ?>" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Grupos</span></a>
+                            </li>
+                            <li>
+                                <a class="waves-effect waves-dark" href="<?php echo url_for('template/index') ?>" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">Plantillas</span></a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if ($sf_user->hasCredential('admin') || $sf_user->hasCredential('staff')): ?>
                         <li>
                             <a class="waves-effect waves-dark" href="<?php echo url_for('checkList/index') ?>" aria-expanded="false"><i class="fa fa-tasks"></i><span class="hide-menu">Listas de chequeo</span></a>
                         </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-bar-chart-o"></i><span class="hide-menu">Informe</span></a>
-                        </li>
+                        <?php endif; ?>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -172,62 +180,62 @@
                             <div class="card-body">
                                 <div class="d-flex">
                                     <div>
-                                    <div class="ml-auto">
-                                        <?php echo $sf_content ?>
+                                        <div class="ml-auto">
+                                            <?php echo $sf_content ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
-
-
+                <!-- ============================================================== -->
+                <!-- End Container fluid  -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- footer -->
+                <!-- ============================================================== -->
+                <footer class="footer"> Tiqal / Antonio José Camacho </footer>
+                <!-- ============================================================== -->
+                <!-- End footer -->
+                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer"> Tiqal / Antonio José Camacho </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
+            <!-- End Page wrapper  -->
             <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
+        <!-- End Wrapper -->
         <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
+        <!-- ============================================================== -->
 
 
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <?php use_javascript('plugins/jquery/jquery.min.js') ?>
-    <!-- Bootstrap popper Core JavaScript -->
-    <?php use_javascript('plugins/bootstrap/js/popper.min.js') ?>
-    <?php use_javascript('plugins/bootstrap/js/bootstrap.min.js') ?>
+        <!-- All Jquery -->
+        <!-- ============================================================== -->
+        <?php use_javascript('plugins/jquery/jquery.min.js') ?>
+        <!-- Bootstrap popper Core JavaScript -->
+        <?php use_javascript('plugins/bootstrap/js/popper.min.js') ?>
+        <?php use_javascript('plugins/bootstrap/js/bootstrap.min.js') ?>
 
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <?php use_javascript('perfect-scrollbar.jquery.min.js') ?>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <?php use_javascript('perfect-scrollbar.jquery.min.js') ?>
 
-    <!--Wave Effects -->
-    <?php use_javascript('waves.js') ?>
-    <!--Menu sidebar -->
-    <?php use_javascript('sidebarmenu.js') ?>
-    <!--Custom JavaScript -->
-    <?php use_javascript('custom.min.js') ?>
-    <!-- ============================================================== -->
-    <!-- This page plugins -->
-    <!-- ============================================================== -->
+        <!--Wave Effects -->
+        <?php use_javascript('waves.js') ?>
+        <!--Menu sidebar -->
+        <?php use_javascript('sidebarmenu.js') ?>
+        <!--Custom JavaScript -->
+        <?php use_javascript('custom.min.js') ?>
+        <!-- ============================================================== -->
+        <!-- This page plugins -->
+        <!-- ============================================================== -->
 
-    <?php use_javascript('plugins/toast-master/js/jquery.toast.js') ?>
-    <?php use_javascript('dashboard1.js') ?>
+        <?php use_javascript('plugins/toast-master/js/jquery.toast.js') ?>
+        <?php use_javascript('dashboard1.js') ?>
 
-    <?php include_javascripts(true) ?>
+        <?php include_javascripts(true) ?>
 </body>
 
 </html>
