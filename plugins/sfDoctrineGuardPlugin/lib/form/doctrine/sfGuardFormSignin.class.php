@@ -18,8 +18,8 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
     
     $this->widgetSchema['username'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
     $this->widgetSchema['password'] = new sfWidgetFormInputPassword(array('type' => 'password'),array( 'class' => 'form-control'));
+    $this->widgetSchema['remember'] = new sfWidgetFormInputCheckbox(array(), array( 'class' => 'filled-in chk-col-light-blue'));
 
-
-    $this->useFields(['username','password']);
+    $this->useFields(['username','password', 'remember']);
   }
 }
