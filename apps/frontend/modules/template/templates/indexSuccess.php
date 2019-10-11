@@ -11,7 +11,9 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
+              <?php echo $formFilter ?>
               <table class="table table-bordered data-table dataTable">
+                
                 <thead>
                   <tr>
                     <th><h3>Id</h3></th>

@@ -12,5 +12,6 @@ class sfGuardUserFormFilter extends PluginsfGuardUserFormFilter
 {
   public function configure()
   {
+    
   }
 }

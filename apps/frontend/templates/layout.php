@@ -102,8 +102,8 @@
                                     <li>
                                         <div class="dw-user-box">
                                             <div class="u-text">
-                                                <h4>Admin</h4>
-                                                <p class="text-muted">admin@tiqal.com</p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Logout</a>
+                                                <h4><?php echo ($sf_user->getGuardUser()->getName()).' - '.($sf_user->getGuardUser()->getUsername()) ?></h4>
+                                                <p class="text-muted"><?php echo ($sf_user->getGuardUser()->getEmail()) ?></p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Logout</a>
                                             </div>
                                         </div>
                                     </li>
@@ -138,7 +138,7 @@
                                 <a class="waves-effect waves-dark" href="<?php echo url_for('template/index') ?>" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">Plantillas</span></a>
                             </li>
                         <?php endif; ?>
-                        <?php if ($sf_user->hasCredential('admin') || $sf_user->hasCredential('staff')): ?>
+                        <?php if ($sf_user->hasCredential('admin') || $sf_user->hasCredential('staff') || $sf_user->hasCredential('guest')): ?>
                         <li>
                             <a class="waves-effect waves-dark" href="<?php echo url_for('checkList/index') ?>" aria-expanded="false"><i class="fa fa-tasks"></i><span class="hide-menu">Listas de chequeo</span></a>
                         </li>

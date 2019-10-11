@@ -24,7 +24,8 @@ class StandardTable extends Doctrine_Table
      */
     public static function sumWeightByStandard($standardId, $criterionToExclude = false)
     {
-        $query = Doctrine_Query::create()->select('s.id, SUM(s.weight) as total')->from('Standard s')->where('s.id = ?',
+      
+        $query = Doctrine_Query::create()->select('s.id, SUM(s.weight) as total')->from('Standard s')->where('s.template_id = ?',
             $standardId);
 
         if ($criterionToExclude)

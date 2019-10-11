@@ -12,6 +12,7 @@ class templateActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
+    $this->formFilter = new TemplateFormFilter();
     $this->templates = Doctrine_Core::getTable('Template')->createQuery('a');
     $this->pager = new sfDoctrinePager('Template', sfConfig::get('app_max_per_page'));
     $this->pager->setQuery($this->template);

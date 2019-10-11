@@ -27,6 +27,10 @@ class checkListActions extends sfActions
 
   public function executeNew(sfWebRequest $request)
   {
+    $user = $this->getUser();
+    if (!$user->hasCredential('admin') || !$user->hasCredential('staff')) {
+      $this->forward404Unless(true);
+    }
     $this->form = new CheckListForm();
   }
 
@@ -68,14 +72,29 @@ class checkListActions extends sfActions
     $this->redirect('checkList/index');
   }
 
-  protected function processForm(sfWebRequest $request, sfForm $form)
+  public function executeResolver(sfWebRequest $request)
+  {
+    $this->forward404Unless($this->check_list = Doctrine_Core::getTable('CheckList')->find(array($request->getParameter('id'))), sprintf('Object check_list does not exist (%s).', $request->getParameter('id')));
+    $this->form = new ResolverCheckListForm($this->check_list);
+
+    // si la solicitud llega por método post eso quiere decir que se deben procesar los datos enviados por el usuario
+    if ($request->isMethod(sfRequest::PUT)) {
+      $this->processFormResolver($request, $this->form);
+    }
+  }
+
+
+  /**
+   * Procesa el formulario ejecutando las validacion y posteriormente guardando en base de  datos
+   */
+
+  protected function processFormResolver(sfWebRequest $request, sfForm $form)
   {
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
-    if ($form->isValid())
-    {
+    if ($form->isValid()) {
       $check_list = $form->save();
 
-      $this->redirect('checkList/edit?id='.$check_list->getId());
+      $this->redirect('checkList/resolver?id=' . $check_list->getId());
     }
   }
 }

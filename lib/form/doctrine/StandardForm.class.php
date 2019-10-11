@@ -36,7 +36,7 @@ class StandardForm extends BaseStandardForm
         if($values['template_id'] != null && $values['weight'] != null)
         {
             $criterionId = ($this->isNew()) ? false : $this->getObject()->getId();
-            $total =  StandardTable::sumWeightByCheckList($values['template_id'], $criterionId);
+            $total =  StandardTable::sumWeightByStandard($values['template_id'], $criterionId);
 
             $newTotal = $total + $values['weight'];
             if($newTotal > 100) {

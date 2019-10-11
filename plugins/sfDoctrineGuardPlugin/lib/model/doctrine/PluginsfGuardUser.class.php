@@ -35,6 +35,22 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
     return trim($this->getFirstName().' '.$this->getLastName());
   }
 
+  public function getEmail()
+  {
+    return trim($this->getEmailAddress());
+  }
+
+  public function getSuperAdmin()
+  {
+    return trim($this->getIsSuperAdmin());
+  }
+
+  public function getUser()
+  {
+    return trim($this->getUsername());
+  }
+  
+
   /**
    * Sets the user password.
    *

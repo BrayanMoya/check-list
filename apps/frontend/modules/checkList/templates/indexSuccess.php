@@ -17,15 +17,14 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Observations</th>
-                    <th>Reference</th>
                     <th>Template</th>
                     <th>Responsible</th>
                     <th>Original threshold</th>
                     <th>Assessment</th>
                     <th>Status</th>
                     <th>Version at</th>
-                    <th>Created at</th>
-                    <th>Updated at</th>
+                    <th>Acciones</th>
+
                   </tr>
                 </thead>
                 <tbody>
@@ -34,15 +33,14 @@
                       <td><a href="<?php echo url_for('checkList/show?id=' . $check_list->getId()) ?>"><?php echo $check_list->getId() ?></a></td>
                       <td><?php echo $check_list->getName() ?></td>
                       <td><?php echo $check_list->getObservations() ?></td>
-                      <td><?php echo $check_list->getReference() ?></td>
                       <td><?php echo $check_list->getTemplateId() ?></td>
                       <td><?php echo $check_list->getResponsibleId() ?></td>
                       <td><?php echo $check_list->getOriginalThreshold() ?></td>
                       <td><?php echo $check_list->getAssessment() ?></td>
                       <td><?php echo $check_list->getStatus() ?></td>
                       <td><?php echo $check_list->getVersionAt() ?></td>
-                      <td><?php echo $check_list->getCreatedAt() ?></td>
-                      <td><?php echo $check_list->getUpdatedAt() ?></td>
+                      <td><a href= "<?php echo url_for('checkList/resolver?id='.$check_list->getId()) ?>">Resolver</td>
+
                     </tr>
                   <?php endforeach; ?>
                 </tbody>

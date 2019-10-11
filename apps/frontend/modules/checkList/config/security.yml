@@ -1,2 +1,8 @@
 all:
   credentials: [[admin, staff]] #Solo usuarios con credencial admin o staff pueden ingresar a este modulo
+
+show:
+  credentials: [[admin, staff, guest]]
+
+index:
+  credentials: [[admin, staff, guest]]

@@ -228,9 +228,9 @@ class sfGuardSecurityUser extends sfBasicSecurityUser
    *
    * @return string
    */
-  public function getUsername()
+  public function getUser()
   {
-    return $this->getGuardUser()->getUsername();
+    return $this->getGuardUser()->getUser();
   }
 
   /**
@@ -251,6 +251,11 @@ class sfGuardSecurityUser extends sfBasicSecurityUser
   public function getEmail()
   {
     return $this->getGuardUser()->getEmail();
+  }
+
+  public function getSuperAdmin()
+  {
+    return $this->getGuardUser()->getSuperAdmin();
   }
 
   /**
