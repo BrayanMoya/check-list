@@ -21,7 +21,7 @@
     ?>
     <?php use_stylesheet('plugins/bootstrap/css/bootstrap.min.css') ?>
     <?php use_stylesheet('plugins/perfect-scrollbar/css/perfect-scrollbar.css') ?>
-
+    <?php use_stylesheet('plugins/bootstrap-datepicker/bootstrap-datepicker.min.css') ?>
     <?php use_stylesheet('style.css') ?>
     <?php use_stylesheet('pages/dashboard1.css') ?>
     <?php use_stylesheet('pages/floating-label.css') ?>
@@ -102,7 +102,7 @@
                                     <li>
                                         <div class="dw-user-box">
                                             <div class="u-text">
-                                                <h4><?php echo ($sf_user->getGuardUser()->getName()).' - '.($sf_user->getGuardUser()->getUsername()) ?></h4>
+                                                <h4><?php echo ($sf_user->getGuardUser()->getName()) . ' - ' . ($sf_user->getGuardUser()->getUsername()) ?></h4>
                                                 <p class="text-muted"><?php echo ($sf_user->getGuardUser()->getEmail()) ?></p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Logout</a>
                                             </div>
                                         </div>
@@ -138,10 +138,10 @@
                                 <a class="waves-effect waves-dark" href="<?php echo url_for('template/index') ?>" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">Plantillas</span></a>
                             </li>
                         <?php endif; ?>
-                        <?php if ($sf_user->hasCredential('admin') || $sf_user->hasCredential('staff') || $sf_user->hasCredential('guest')): ?>
-                        <li>
-                            <a class="waves-effect waves-dark" href="<?php echo url_for('checkList/index') ?>" aria-expanded="false"><i class="fa fa-tasks"></i><span class="hide-menu">Listas de chequeo</span></a>
-                        </li>
+                        <?php if ($sf_user->hasCredential('admin') || $sf_user->hasCredential('staff') || $sf_user->hasCredential('guest')) : ?>
+                            <li>
+                                <a class="waves-effect waves-dark" href="<?php echo url_for('checkList/index') ?>" aria-expanded="false"><i class="fa fa-tasks"></i><span class="hide-menu">Listas de chequeo</span></a>
+                            </li>
                         <?php endif; ?>
                     </ul>
                 </nav>
@@ -231,7 +231,7 @@
         <!-- ============================================================== -->
         <!-- This page plugins -->
         <!-- ============================================================== -->
-
+        <?php use_javascript('plugins/bootstrap-datepicker/bootstrap-datepicker.min.js') ?>
         <?php use_javascript('plugins/toast-master/js/jquery.toast.js') ?>
         <?php use_javascript('dashboard1.js') ?>
 

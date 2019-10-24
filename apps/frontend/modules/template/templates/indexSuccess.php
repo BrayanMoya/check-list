@@ -11,20 +11,39 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
-              <?php echo $formFilter ?>
+              <?php include_partial('filter', array('url' => 'template/index', 'formFilter' => $formFilter)) ?>
+
               <table class="table table-bordered data-table dataTable">
-                
+
                 <thead>
                   <tr>
-                    <th><h3>Id</h3></th>
-                    <th><h3>Name</h3></th>
-                    <th><h3>Description</h3></th>
-                    <th><h3>Prefix</h3></th>
-                    <th><h3>Threshold</h3></th>
-                    <th><h3>Checklists_qt</h3></th>
-                    <th><h3>Status</h3></th>
-                    <th><h3>Created at</h3></th>
-                    <th><h3>Updated at</h3></th>
+                    <th>
+                      <h3>Id</h3>
+                    </th>
+                    <th>
+                      <h3>Name</h3>
+                    </th>
+                    <th>
+                      <h3>Description</h3>
+                    </th>
+                    <th>
+                      <h3>Prefix</h3>
+                    </th>
+                    <th>
+                      <h3>Threshold</h3>
+                    </th>
+                    <th>
+                      <h3>Checklists_qt</h3>
+                    </th>
+                    <th>
+                      <h3>Status</h3>
+                    </th>
+                    <th>
+                      <h3>Created at</h3>
+                    </th>
+                    <th>
+                      <h3>Updated at</h3>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>

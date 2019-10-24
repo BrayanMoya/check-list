@@ -43,6 +43,10 @@ Standard:
       notnull: true
     weight:
       type: double
+    is_killer_question:
+      type: boolean
+      default: true
+      notnull: true
   relations:
     Template:
       onDelete: CASCADE
@@ -120,6 +124,10 @@ CheckedStandard:
       type: string(255)
     assigned_value:
       type: double
+    is_killer_question:
+      type: boolean
+      default: true
+      notnull: true
   relations:
     CheckList:
       onDelete: CASCADE

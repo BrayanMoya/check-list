@@ -15,6 +15,11 @@ class StandardForm extends BaseStandardForm
       $this->widgetSchema['name'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
       $this->widgetSchema['template_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Template'), 'add_empty' => false), array( 'class' => 'form-control'));
       $this->widgetSchema['weight'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
+      $this->widgetSchema['is_killer_question'] = new sfWidgetFormChoice(
+        array(
+            'choices' => array(1 => 'Si', 0 => 'No'),
+        ), array( 'class' => 'form-control'));
+      
 
       $this->validatorSchema['weight'] = new sfValidatorNumber(
           array( 'max' => 100, 'min' => 0 ),
@@ -25,7 +30,7 @@ class StandardForm extends BaseStandardForm
           new sfValidatorCallback(array('callback' => array($this, 'checkWeight')))
       );
 
-      $this->useFields(['name', 'template_id', 'weight']);
+      $this->useFields(['name', 'template_id', 'weight', 'is_killer_question']);
   }
 
 

@@ -63,7 +63,7 @@
       <tr>
         <div class="row">
           <div class="col m12">
-          <td>&nbsp;<a href="<?php echo url_for('checkList/index') ?>">Back to list</a>
+          <td>&nbsp;<a href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a>
             <?php if (!$form->getObject()->isNew()) : ?></td>
             <td>&nbsp;<?php echo link_to('Borrar', 'checkList/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
             <?php endif; ?>

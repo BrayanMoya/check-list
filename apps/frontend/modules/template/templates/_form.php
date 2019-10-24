@@ -42,13 +42,6 @@
       <?php echo $form['threshold']->renderError() ?>
     </div>
 
-    <div class="form-group col-md-12 col-md-offset-3 <?php echo $form['checklists_qt']->hasError() ? 'has-error' : '' ?>">
-      <?php echo $form['checklists_qt'] ?>
-      <span class="bar"></span>
-      <?php echo $form['checklists_qt']->renderLabel() ?>
-      <?php echo $form['checklists_qt']->renderError() ?>
-    </div>
-
     <div class="form-group col-md-12 col-md-offset-3 <?php echo $form['status']->hasError() ? 'has-error' : '' ?>">
       <?php echo $form['status'] ?>
       <span class="bar"></span>
@@ -64,7 +57,7 @@
       <tr>
         <div class="row">
           <div class="col m12">
-            <td>&nbsp;<a href="<?php echo url_for('template/index') ?>">Back to list</a>
+            <td>&nbsp;<a href="<?php echo url_for('template/index') ?>">Volver a la lista</a>
               <?php if (!$form->getObject()->isNew()) : ?></td>
             <td>&nbsp;<?php echo link_to('Borrar', 'template/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
           <?php endif; ?>

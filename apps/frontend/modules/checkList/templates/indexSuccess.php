@@ -11,6 +11,7 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
+              <?php include_partial('form_filter', array('formFilter' => $formFilter, 'url' => 'checkList/index')) ?>
               <table class="table table-bordered data-table dataTable">
                 <thead>
                   <tr>
@@ -39,7 +40,7 @@
                       <td><?php echo $check_list->getAssessment() ?></td>
                       <td><?php echo $check_list->getStatus() ?></td>
                       <td><?php echo $check_list->getVersionAt() ?></td>
-                      <td><a href= "<?php echo url_for('checkList/resolver?id='.$check_list->getId()) ?>">Resolver</td>
+                      <td><a href="<?php echo url_for('checkList/resolver?id=' . $check_list->getId()) ?>">Resolver</td>
 
                     </tr>
                   <?php endforeach; ?>

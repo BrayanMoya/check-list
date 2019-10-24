@@ -16,12 +16,11 @@ class TemplateForm extends BaseTemplateForm
     $this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array( 'class' => 'form-control'));
     $this->widgetSchema['prefix'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
     $this->widgetSchema['threshold'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
-    $this->widgetSchema['checklists_qt'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
     $this->widgetSchema['status'] = new sfWidgetFormChoice(
       array(
           'choices' => array(1 => 'Activo', 0 => 'Inactivo'),
       ), array( 'class' => 'form-control'));
 
-      $this->useFields(['name','description','prefix','threshold','checklists_qt','status']);
+      $this->useFields(['name','description','prefix','threshold','status']);
   }
 }

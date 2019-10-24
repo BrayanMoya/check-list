@@ -19,7 +19,7 @@
            </ul>
 
            <!-- iteramos por todos los  formularios embebidos  -->
-           <?php foreach ($form['standardList'] as $subForm): ?>
+           <?php foreach ($form['standardList'] as $subForm):?>
                <div  class="form-group col-md-6"> <?php echo  $subForm['option_selected']->renderLabel()  ?></div>
                <div class="form-group col-md-4 <?php echo $subForm['option_selected']->hasError() ? 'has-error' : '' ?>">
                    <?php echo $subForm['option_selected'] ?>
@@ -32,7 +32,7 @@
            </div>
        <div class="row">
            <div class="col m12">
-               &nbsp;<a href="<?php echo url_for('checkList/index') ?>">Back to list</a>
+               &nbsp;<a href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a>
                <input type="submit" value="Save"/>
 
            </div>

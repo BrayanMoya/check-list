@@ -13,7 +13,14 @@ class templateActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->formFilter = new TemplateFormFilter();
-    $this->templates = Doctrine_Core::getTable('Template')->createQuery('a');
+    if ($request->isMethod(sfRequest::POST)) {
+      $this->formFilter->bind($request->getParameter($this->formFilter->getName()), $request->getFiles($this->formFilter->getName()));
+      $this->templates = $this->formFilter->buildQuery($this->formFilter->getValues())->execute();
+    } else {
+      $this->templates = Doctrine_Core::getTable('Template')
+        ->createQuery('a')
+        ->execute();
+    }
     $this->pager = new sfDoctrinePager('Template', sfConfig::get('app_max_per_page'));
     $this->pager->setQuery($this->template);
     $this->pager->setPage($request->getParameter('page', 1));
@@ -29,7 +36,7 @@ class templateActions extends sfActions
   public function executeNew(sfWebRequest $request)
   {
     $user = $this->getUser();
-    if ( !$user->hasCredential('admin') ) {
+    if (!$user->hasCredential('admin')) {
       $this->forward404Unless(true);
     }
     $this->form = new TemplateForm();
@@ -122,7 +129,7 @@ class templateActions extends sfActions
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid()) {
       $criterion = $form->save();
-      $this->redirect('template/editCriterion?id=' . $criterion->getId());
+      $this->redirect('template/newCriterion?id=' . $criterion->getId());
     }
   }
 }
