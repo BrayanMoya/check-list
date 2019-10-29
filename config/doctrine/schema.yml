@@ -126,7 +126,6 @@ CheckedStandard:
       type: double
     is_killer_question:
       type: boolean
-      default: true
       notnull: true
   relations:
     CheckList:

@@ -24,7 +24,8 @@
         </div>
 
         <div class="form-group col-md-12 <?php echo $form['template_id']->hasError() ? 'has-error': '' ?>">
-            <?php echo $form['template_id'] ?>
+            <?php echo $form['template_id'] ?>            
+            <?php echo $form['template_id']->renderError() ?>
             <span class="bar"></span>
             <?php echo $form['template_id']->renderLabel() ?>
         </div>
@@ -48,15 +49,19 @@
 
 
     </div>
-    <div class="row">
-        <div class="col m12">
-            &nbsp;<a href="<?php echo url_for('template/index') ?>">Volver a la lista</a>
-            <?php if (!$form->getObject()->isNew()): ?>
-                &nbsp;<?php echo link_to('Delete', 'template/deleteCriterion?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
+    <table class="table table-bordered data-table dataTable">
+    <tbody>
+      <tr>
+        <div class="row">
+          <div class="col m12">
+              <?php if (!$form->getObject()->isNew()) : ?>
+              <td>&nbsp;<?php echo link_to('Delete', 'template/deleteCriterion?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
             <?php endif; ?>
-            <input type="submit" value="Save" />
-
+            <td><input type="submit" value="Guardar"/></td>
+            </div>
         </div>
-    </div>
+      </tr>
+    </tbody>
+  </table>
 </form>
 
