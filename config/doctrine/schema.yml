@@ -45,6 +45,7 @@ Standard:
       type: double
     is_killer_question:
       type: boolean
+      primary: true
       default: true
       notnull: true
   relations:
@@ -124,9 +125,8 @@ CheckedStandard:
       type: string(255)
     assigned_value:
       type: double
-    is_killer_question:
+    is_killer_question_id:
       type: boolean
-      default: true
       notnull: true
   relations:
     CheckList:
@@ -134,6 +134,11 @@ CheckedStandard:
       local: checklist_id
       foreign: id
       foreignAlias: CheckedStandards
+    Standard:
+      onDelete: CASCADE
+      local: is_killer_question_id
+      foreign: is_killer_question
+      foreignAlias: ikq
 
 Assessments:
   actAs:
