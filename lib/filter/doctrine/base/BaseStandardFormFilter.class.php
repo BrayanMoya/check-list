@@ -17,10 +17,7 @@ abstract class BaseStandardFormFilter extends BaseFormFilterDoctrine
       'description'        => new sfWidgetFormFilterInput(),
       'template_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Template'), 'add_empty' => true)),
       'weight'             => new sfWidgetFormFilterInput(),
-<<<<<<< HEAD
-=======
       'is_killer_question' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
->>>>>>> 1e745ac6b46fa09f911299dfd69d10f61625b880
       'created_at'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -30,10 +27,7 @@ abstract class BaseStandardFormFilter extends BaseFormFilterDoctrine
       'description'        => new sfValidatorPass(array('required' => false)),
       'template_id'        => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Template'), 'column' => 'id')),
       'weight'             => new sfValidatorPass(array('required' => false)),
-<<<<<<< HEAD
-=======
       'is_killer_question' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
->>>>>>> 1e745ac6b46fa09f911299dfd69d10f61625b880
       'created_at'         => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'         => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
