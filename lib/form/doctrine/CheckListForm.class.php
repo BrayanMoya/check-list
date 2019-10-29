@@ -85,6 +85,8 @@ class CheckListForm extends BaseCheckListForm
       $checkedStandard->setDescription($standard->getDescription());
       // copiamos el peso del criterio
       $checkedStandard->setFinalWeight($standard->getWeight());
+      // copiamos la killer_question del criterio
+      $checkedStandard->setIsKillerQuestion($standard->getIsKillerQuestion());
       // creamos la relacion entre las tablas check_list y checked_standard
       // esta relación es obligatoria ya que al no hacerla podemos generar un error a nivel de base de datos
       $checkedStandard->setCheckList($this->getObject());

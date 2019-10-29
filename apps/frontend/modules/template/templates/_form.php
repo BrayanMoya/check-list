@@ -61,7 +61,7 @@
               <?php if (!$form->getObject()->isNew()) : ?></td>
             <td>&nbsp;<?php echo link_to('Borrar', 'template/delete?id=' . $form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
           <?php endif; ?>
-          <td><input type="submit" value="Save" /></td>
+          <td><input type="submit" value="Guardar" /></td>
           </div>
         </div>
       </tr>

@@ -7,7 +7,7 @@
         <div class="widget-box">
           <div class="widget-title">
             <span class="icon"><i class="icon-th"></i></span>
-            <h5>Listado de Templates</h5>
+            <h5>Listado de Plantillas</h5>
           </div>
           <div class="widget-content nopadding">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
@@ -58,9 +58,9 @@
               <table class="table table-bordered data-table dataTable">
                 <tbody>
                   <tr>
-                    <td><a href="<?php echo url_for('template/edit?id=' . $template->getId()) ?>">Edit</a></td>
+                    <td><a href="<?php echo url_for('template/edit?id=' . $template->getId()) ?>">Editar</a></td>
                     &nbsp;
-                    <td><a href="<?php echo url_for('template/index') ?>">List</a></td>
+                    <td><a href="<?php echo url_for('template/index') ?>">Listar</a></td>
                   </tr>
                 </tbody>
               </table>
