@@ -20,7 +20,11 @@ abstract class BaseStandardForm extends BaseFormDoctrine
       'description'        => new sfWidgetFormTextarea(),
       'template_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Template'), 'add_empty' => false)),
       'weight'             => new sfWidgetFormInputText(),
+<<<<<<< HEAD
       'is_killer_question' => new sfWidgetFormInputHidden(),
+=======
+      'is_killer_question' => new sfWidgetFormInputCheckbox(),
+>>>>>>> 1e745ac6b46fa09f911299dfd69d10f61625b880
       'created_at'         => new sfWidgetFormDateTime(),
       'updated_at'         => new sfWidgetFormDateTime(),
     ));
@@ -31,7 +35,11 @@ abstract class BaseStandardForm extends BaseFormDoctrine
       'description'        => new sfValidatorString(array('required' => false)),
       'template_id'        => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Template'), 'column' => 'id')),
       'weight'             => new sfValidatorPass(array('required' => false)),
+<<<<<<< HEAD
       'is_killer_question' => new sfValidatorChoice(array('choices' => array($this->getObject()->get('is_killer_question')), 'empty_value' => $this->getObject()->get('is_killer_question'), 'required' => false)),
+=======
+      'is_killer_question' => new sfValidatorBoolean(array('required' => false)),
+>>>>>>> 1e745ac6b46fa09f911299dfd69d10f61625b880
       'created_at'         => new sfValidatorDateTime(),
       'updated_at'         => new sfValidatorDateTime(),
     ));

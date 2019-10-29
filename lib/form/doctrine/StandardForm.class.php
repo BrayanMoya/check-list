@@ -30,6 +30,10 @@ class StandardForm extends BaseStandardForm
           new sfValidatorCallback(array('callback' => array($this, 'checkWeight')))
       );
 
+      $this->widgetSchema['name']->setLabel('Nombre');
+      $this->widgetSchema['template_id']->setLabel('Plantilla');
+      $this->widgetSchema['weight']->setLabel('Valor');
+      $this->widgetSchema['is_killer_question']->setLabel('¿Obligatorio?');
       $this->useFields(['name', 'template_id', 'weight', 'is_killer_question']);
   }
 

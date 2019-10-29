@@ -96,14 +96,14 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USER</a>
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
                             <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
                                             <div class="u-text">
                                                 <h4><?php echo ($sf_user->getGuardUser()->getName()) . ' - ' . ($sf_user->getGuardUser()->getUsername()) ?></h4>
-                                                <p class="text-muted"><?php echo ($sf_user->getGuardUser()->getEmail()) ?></p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Logout</a>
+                                                <p class="text-muted"><?php echo ($sf_user->getGuardUser()->getEmail()) ?></p><a href="<?php echo url_for('/logout') ?>" class="btn btn-rounded btn-danger btn-sm">Cerrar Sesion</a>
                                             </div>
                                         </div>
                                     </li>
@@ -134,13 +134,24 @@
                             <li>
                                 <a class="waves-effect waves-dark" href="<?php echo url_for('sfGuardGroup/index') ?>" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Grupos</span></a>
                             </li>
-                            <li>
-                                <a class="waves-effect waves-dark" href="<?php echo url_for('template/index') ?>" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">Plantillas</span></a>
+
+                            <li style="position: relative; display: inline-block;">
+                            <a class="waves-effect waves-dark" aria-expanded="false"><i class="fa fa-list-alt"></i><span class="hide-menu">Plantillas</span></a>
+
+                                <ul >
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="<?php echo url_for('template/index') ?>" aria-expanded="false"><i class="fa fa-clipboard"></i>  <span class="hide-menu">Gestionar plantillas</span></a>
+                                    </li>
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="<?php echo url_for('template/newCriterion') ?>" aria-expanded="false"><i class="fa fa-edit"></i>  <span class="hide-menu">Gestionar Criterios</span></a>
+                                    </li>
+                                </ul>
                             </li>
+
                         <?php endif; ?>
                         <?php if ($sf_user->hasCredential('admin') || $sf_user->hasCredential('staff') || $sf_user->hasCredential('guest')) : ?>
                             <li>
-                                <a class="waves-effect waves-dark" href="<?php echo url_for('checkList/index') ?>" aria-expanded="false"><i class="fa fa-tasks"></i><span class="hide-menu">Listas de chequeo</span></a>
+                                <a class="waves-effect waves-dark" href="<?php echo url_for('checkList/index') ?>" aria-expanded="false"><i class="fa fa-check"></i><span class="hide-menu">Listas de chequeo</span></a>
                             </li>
                         <?php endif; ?>
                     </ul>

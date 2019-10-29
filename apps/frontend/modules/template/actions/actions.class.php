@@ -86,7 +86,7 @@ class templateActions extends sfActions
     if ($form->isValid()) {
       $template = $form->save();
 
-      $this->redirect('template/edit?id=' . $template->getId());
+      $this->redirect('template/new?id=' . $template->getId());
     }
   }
 

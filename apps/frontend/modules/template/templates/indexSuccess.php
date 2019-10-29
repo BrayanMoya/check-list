@@ -5,7 +5,7 @@
         <div class="widget-box">
           <div class="widget-title">
             <span class="icon"><i class="icon-th"></i></span>
-            <h1>Templates List</h1>
+            <h1>Lista de plantillas</h1>
           </div>
           <div class="widget-content nopadding">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
@@ -21,28 +21,28 @@
                       <h3>Id</h3>
                     </th>
                     <th>
-                      <h3>Name</h3>
+                      <h3>Nombre</h3>
                     </th>
                     <th>
-                      <h3>Description</h3>
+                      <h3>Descripcion</h3>
                     </th>
                     <th>
-                      <h3>Prefix</h3>
+                      <h3>Prefijo</h3>
                     </th>
                     <th>
-                      <h3>Threshold</h3>
+                      <h3>Rango</h3>
                     </th>
                     <th>
                       <h3>Checklists_qt</h3>
                     </th>
                     <th>
-                      <h3>Status</h3>
+                      <h3>Estado</h3>
                     </th>
                     <th>
-                      <h3>Created at</h3>
+                      <h3>Creado</h3>
                     </th>
                     <th>
-                      <h3>Updated at</h3>
+                      <h3>Actualizado</h3>
                     </th>
                   </tr>
                 </thead>
@@ -66,8 +66,7 @@
               <table class="table table-bordered data-table dataTable">
                 <tbody>
                   <tr>
-                    <td><a href="<?php echo url_for('template/new') ?>">New</a></td>
-                    <td><a href="<?php echo url_for('template/newCriterion') ?>">New Criterion</a></td>
+                    <td><a href="<?php echo url_for('template/new') ?>">Nueva</a></td>
                   </tr>
                 </tbody>
               </table>
