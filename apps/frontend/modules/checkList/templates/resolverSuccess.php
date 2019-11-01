@@ -45,6 +45,7 @@
 
 </form>
 <style>
+    
     form {
         padding-left: 130px;
         padding-right: 130px;

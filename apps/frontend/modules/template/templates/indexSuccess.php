@@ -7,13 +7,12 @@
             <span class="icon"><i class="icon-th"></i></span>
             <h1>Lista de plantillas</h1>
           </div>
-          <div class="widget-content nopadding">
+          <div style="height:220px; " class="widget-content nopadding">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
-              <?php include_partial('filter', array('url' => 'template/index', 'formFilter' => $formFilter)) ?>
 
-              <table class="table table-bordered data-table dataTable">
+              <table class="table table-hover data-table dataTable">
 
                 <thead>
                   <tr>
@@ -63,19 +62,28 @@
                 </tbody>
               </table>
 
-              <table class="table table-bordered data-table dataTable">
-                <tbody>
-                  <tr>
-                    <td><a href="<?php echo url_for('template/new') ?>">Nueva</a></td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="dropdown-divider"></div>
+              <br>
+              <div data-toggle="tooltip" data-placement="top" title="Opciones" class="btn-group dropright">
+                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  <i class="fa fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(119px, 0px, 0px); top: 0px; left: 0px; will-change: transform; border:hidden;">
+                  <a data-toggle="tooltip" data-placement="bottom" title="Nueva plantilla" href="<?php echo url_for('template/new') ?>" class="btn btn-info btn-circle "><i class="fa fa-plus"></i></a>
+                  <button data-placement="left" title="Filtrar" type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#filterModal" data-whatever="@getbootstrap"><i class="fa fa-search"></i>
+                  </button>
+
+                </div>
+                <?php //include_partial('filter', array( 'url' => 'template/index', 'formFilter' => $formFilter))
+                ?>
+                <?php include_partial('checkList/form_filter', array('url' => 'template/index', 'formFilter' => $formFilter)) ?>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<?php include_partial('pagination', array('pager' => $pager)) ?>
+  <?php include_partial('pagination', array('pager' => $pager)) ?>

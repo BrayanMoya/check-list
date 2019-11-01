@@ -24,7 +24,7 @@ class CheckedStandardTable extends Doctrine_Table
    */
     public static function sumWeightByCheckList($checkListId, $criterionToExclude = false)
     {
-      $query = Doctrine_Query::create()->select('c.id, SUM(c.weight) as total')->from('CheckedStandard c')->where('c.check_list_id = ?',
+      $query = Doctrine_Query::create()->select('c.id, SUM(c.weight) as total')->from('CheckedStandard c')->where('c.checklist_id = ?',
         $checkListId);
 
       if ($criterionToExclude)
@@ -45,7 +45,16 @@ class CheckedStandardTable extends Doctrine_Table
   {
     $query = Doctrine_Query::create()
       ->from('CheckedStandard c')
-      ->where('c.check_list = ?', $checkListId);
+      ->where('c.checklist_id = ?', $checkListId);
+
+    return $query->execute(null, $hydrationMode);
+  }
+
+  public function getOptionTrue($hydrationMode = 2)
+  {
+    $query = Doctrine_Query::create()
+      ->from('CheckedStandard c')
+      ->where('c.option_selected = ?', 'true');
 
     return $query->execute(null, $hydrationMode);
   }

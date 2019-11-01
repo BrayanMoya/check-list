@@ -78,6 +78,7 @@ class CheckListForm extends BaseCheckListForm
     $newListStandard = new Doctrine_Collection('CheckedStandard');
     /** @var  $standard  Standard */
     foreach ($standards as $standard) {
+      
       $checkedStandard = new CheckedStandard();
       // copiamos el nombre del criterio
       $checkedStandard->setName($standard->getName());

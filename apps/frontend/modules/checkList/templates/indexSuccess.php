@@ -11,7 +11,6 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
-              <?php include_partial('form_filter', array('formFilter' => $formFilter, 'url' => 'checkList/index')) ?>
               <table class="table table-bordered data-table dataTable">
                 <thead>
                   <tr>
@@ -46,13 +45,6 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
-              <table class="table table-bordered data-table dataTable">
-                <tbody>
-                  <tr>
-                    <td><a href="<?php echo url_for('checkList/new') ?>">New</a></td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
@@ -63,3 +55,17 @@
 
 
 <?php include_partial('pagination', array('pager' => $pager)) ?>
+
+<div class="fab"></div>
+<div class="trigger text-white bg-info"><i class="fa fa-ellipsis-v"></i></div>
+<div class="actions">
+  <div class="action">
+    <a data-toggle="tooltip" data-placement="left" title="Nueva lista de tareas" href="<?php echo url_for('checkList/new') ?>" class="btn btn-info btn-circle"><i class="fa fa-plus"></i></a>
+  </div>
+  <div class="action">
+    <button data-placement="left" title="Filtrar" type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#filterModal" data-whatever="@getbootstrap"><i class="fa fa-search"></i>
+    </button>
+  </div>
+</div>
+
+<?php include_partial('form_filter', array('formFilter' => $formFilter, 'url' => 'checkList/index')) ?>

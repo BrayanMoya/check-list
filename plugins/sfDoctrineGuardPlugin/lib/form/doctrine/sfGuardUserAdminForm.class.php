@@ -15,5 +15,9 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
    */
   public function configure()
   {
+    foreach ($this->getWidgetSchema()->getFields() as $field) {
+      $field->setAttribute('class', 'form-control');
+    }
+    sfWidgetFormSchema::setDefaultFormFormatterName('custom');
   }
 }

@@ -20,35 +20,35 @@
                     <td><?php echo $template->getId() ?></td>
                   </tr>
                   <tr>
-                    <th>Name:</th>
+                    <th>Nombre:</th>
                     <td><?php echo $template->getName() ?></td>
                   </tr>
                   <tr>
-                    <th>Description:</th>
+                    <th>Descripcion:</th>
                     <td><?php echo $template->getDescription() ?></td>
                   </tr>
                   <tr>
-                    <th>Prefix:</th>
+                    <th>Prefijo:</th>
                     <td><?php echo $template->getPrefix() ?></td>
                   </tr>
                   <tr>
-                    <th>Threshold:</th>
+                    <th>Meta:</th>
                     <td><?php echo $template->getThreshold() ?></td>
                   </tr>
                   <tr>
-                    <th>Checklists qt:</th>
+                    <th>Checklists relacionados:</th>
                     <td><?php echo $template->getChecklistsQt() ?></td>
                   </tr>
                   <tr>
-                    <th>Status:</th>
+                    <th>Estado:</th>
                     <td><?php echo $template->getStatus() ?></td>
                   </tr>
                   <tr>
-                    <th>Created at:</th>
+                    <th>Creado:</th>
                     <td><?php echo $template->getCreatedAt() ?></td>
                   </tr>
                   <tr>
-                    <th>Updated at:</th>
+                    <th>Actualizado:</th>
                     <td><?php echo $template->getUpdatedAt() ?></td>
                   </tr>
                 </tbody>
@@ -58,9 +58,9 @@
               <table class="table table-bordered data-table dataTable">
                 <tbody>
                   <tr>
-                    <td><a href="<?php echo url_for('template/edit?id=' . $template->getId()) ?>">Editar</a></td>
+                    <td><a class="btn btn-light" href="<?php echo url_for('template/edit?id=' . $template->getId()) ?>">Editar</a></td>
                     &nbsp;
-                    <td><a href="<?php echo url_for('template/index') ?>">Listar</a></td>
+                    <td><a class="btn btn-light" href="<?php echo url_for('template/index') ?>">Listar</a></td>
                   </tr>
                 </tbody>
               </table>

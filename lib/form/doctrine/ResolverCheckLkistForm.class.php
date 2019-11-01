@@ -37,7 +37,6 @@ class ResolverCheckListForm extends BaseCheckListForm
             $standardForm->embedForm($index, $checkedStandardForm);
             $index++;
         }
-
         // por ultimo incrustamos la lista de formulario en nuestro formulario principal con el nombre standardList
         $this->embedForm('standardList', $standardForm);
     }

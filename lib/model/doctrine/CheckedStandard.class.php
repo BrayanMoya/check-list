@@ -36,4 +36,9 @@ class CheckedStandard extends BaseCheckedStandard
   {
     return Doctrine_Core::getTable('CheckedStandard')->getCriteriasByCheckList($checkListId);
   }
+
+  public function getOptionTrue($hydrationMode = 2)
+  {
+    return Doctrine_Core::getTable('CheckedStandard')->getOptionTrue($hydrationMode);
+  }
 }
