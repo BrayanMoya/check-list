@@ -16,10 +16,10 @@ generator:
         display: [=name, description]
 
       filter:
-        display: [name, description, users_list]
+        display: [name, description]
 
       form:
-        display: [name, description, users_list, permissions_list]
+        display: [name, description]
 
       edit:
         title: Editar Grupo "%%name%%"

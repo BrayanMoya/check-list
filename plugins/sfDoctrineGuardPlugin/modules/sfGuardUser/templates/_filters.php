@@ -21,13 +21,13 @@
                             <?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?>
                             <?php include_partial('sfGuardUser/filters_field', array(
                                     'name' => $name,
-                                    'attributes' => $field->getConfig('attributes', array()),
+                                    'attributes' => $field->getConfig('attributes', array(),),
                                     'label' => $field->getConfig('label'),
                                     'help' => $field->getConfig('help'),
                                     'form' => $form,
                                     'field' => $field,
                                     'class' => 'sf_admin_form_row sf_admin_' . strtolower($field->getType()) . ' sf_admin_filter_field_' . $name,
-                            ),array('class' => 'form-control')) ?>
+                                )) ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -35,9 +35,6 @@
         </div>
     </div>
 </div>
-<!-- /.modal -->
-</div>
-
 <script>
     $('.mydatepicker, #datepicker,.datepicker').datepicker({
         format: 'yyyy-mm-dd'

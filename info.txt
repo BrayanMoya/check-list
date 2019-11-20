@@ -1,0 +1,8 @@
+PARA EL MODULO DE USUARIOS
+
+INDEXSUCCESS.PHP:  donde se imprime el titulo para la tabla, la tabla y los botones de accion para nuevo y filtrar usuario
+_LIST.PHP: donde se imprime la tabla, con sus TH TR y la columna entera de las acciones
+
+
+
+SFGUARDUSERFORMFILTER.CLASS.PHP: donde pinta el formulario para filtar usuario dandole el estilo y cambiando de nombre los labels 

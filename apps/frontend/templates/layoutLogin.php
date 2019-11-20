@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="">
-    <title>CheckList Login</title>
+    <title>Inicio CheckList</title>
     <!-- Bootstrap Core CSS -->
     <?php use_stylesheet("plugins/bootstrap/css/bootstrap.min.css") ?>
     <!-- page css -->
@@ -37,7 +37,6 @@
 <div class="preloader">
     <div class="loader">
         <div class="loader__figure"></div>
-        <p class="loader__label">Admin Pro</p>
     </div>
 </div>
 <!-- ============================================================== -->
@@ -46,7 +45,7 @@
 <section id="wrapper" class="login-register login-sidebar" style="background-image: url(/images/background/login.png); background-size:110%;">
     <div class="login-box card">
         <div class="card-body">
-            <a href="javascript:void(0)" class="text-center db"><img src="/images/logo-icon.png" alt="Home" /><br/><img src="/images/logo-text.png" alt="Home" /></a>
+            <a href="javascript:void(0)" class="text-center db"><img src="/images/logo-tiqal.jpg" alt="Home" /></a><br/>
             <?php echo $sf_content ?>
         </div>
     </div>

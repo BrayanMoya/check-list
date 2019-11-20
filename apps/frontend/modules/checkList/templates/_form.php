@@ -58,13 +58,13 @@
       <?php echo $form->renderHiddenFields() ?>
     </div>
   </div>
-  <table class="table table-bordered data-table dataTable">
+  <table class="table table.no-border tbody td data-table dataTable">
     <tbody>
       <tr>
         <div class="row">
           <div class="col m12">
-          <td>&nbsp;<a class="btn btn-light" href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a>
-            <?php if (!$form->getObject()->isNew()) : ?></td>
+          <td>&nbsp;<a class="btn btn-light" href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a></td>
+            <?php if (!$form->getObject()->isNew()) : ?>
             <td>&nbsp;<?php echo link_to('Borrar', 'checkList/delete?id=' . $form->getObject()->getId(), array('class' => 'btn btn-danger'  ,'method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
             <?php endif; ?>
             <td><input class="btn btn-info" type="submit" value="Guardar" /></td>

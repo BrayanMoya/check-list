@@ -15,11 +15,14 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
    */
   public function configure()
   {
-    
-    $this->widgetSchema['username'] = new sfWidgetFormInputText(array(), array( 'class' => 'form-control'));
-    $this->widgetSchema['password'] = new sfWidgetFormInputPassword(array('type' => 'password'),array( 'class' => 'form-control'));
-    $this->widgetSchema['remember'] = new sfWidgetFormInputCheckbox(array(), array( 'class' => 'filled-in chk-col-light-blue'));
+    foreach ($this->getWidgetSchema()->getFields() as $field) {
+      $field->setAttribute('class', 'form-control');
+    }
 
-    $this->useFields(['username','password', 'remember']);
+    sfWidgetFormSchema::setDefaultFormFormatterName('custom');
+
+    $this->widgetSchema['username']->setLabel('Usuario');
+    $this->widgetSchema['password']->setLabel('Contraseña');
+    $this->widgetSchema['remember']->setLabel('Recordar');
   }
 }
