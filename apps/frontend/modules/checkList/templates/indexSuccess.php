@@ -11,7 +11,7 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
-              <table class="table table-bordered data-table dataTable">
+              <table class="table stylish-table color-bordered-table muted-bordered-table">
                 <thead>
                   <tr>
                     <th>Id</th>
@@ -45,6 +45,28 @@
                   <?php endforeach; ?>
                 </tbody>
               </table>
+
+              <!--paginador-->
+              <?php include_partial('pagination', array('pager' => $pager)) ?>
+
+              <div class="dropdown-divider"></div>
+              <br>
+
+              <div data-toggle="tooltip" data-placement="top" title="Opciones" class="btn-group dropright">
+                <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  <i class="fa fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(119px, 0px, 0px); top: 0px; left: 0px; will-change: transform; border:hidden;">
+                  <a data-toggle="tooltip" data-placement="bottom" title="Nueva checklist" href="<?php echo url_for('checkList/new') ?>" class="btn btn-info btn-circle "><i class="fa fa-plus"></i></a>
+                  <button data-placement="left" title="Filtrar" type="button" class="btn btn-info btn-circle" data-toggle="modal" data-target="#filterModal" data-whatever="@getbootstrap"><i class="fa fa-search"></i>
+                  </button>
+
+                </div>
+                <?php //include_partial('filter', array( 'url' => 'template/index', 'formFilter' => $formFilter))
+                ?>
+                <?php include_partial('form_filter', array('formFilter' => $formFilter, 'url' => 'checkList/index')) ?>
+
+              </div>
             </div>
           </div>
         </div>
@@ -53,8 +75,7 @@
   </div>
 </div>
 
-
-<?php include_partial('pagination', array('pager' => $pager)) ?>
+<!--  boton flotante de julian (que no sirve)
 
 <div class="fab"></div>
 <div class="trigger text-white bg-info"><i class="fa fa-ellipsis-v"></i></div>
@@ -67,5 +88,5 @@
     </button>
   </div>
 </div>
-
+-->
 <?php include_partial('form_filter', array('formFilter' => $formFilter, 'url' => 'checkList/index')) ?>

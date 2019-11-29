@@ -1,8 +1,19 @@
+---TODAS LA TABLE.CLASS.PHP: Donde se crean clases (funciones), para hacer consultas a la BD respectiva de cada tabla
+---Todas las .class.php: Donde se llama a las clases (table.class.php) que hacen consultas a la BD
+---TODOS LOS FORM.CLASS.PHP: Donde se le da la configuracion a los labels del formulario y cuales se van a mostrar, y donde se crear funciones para validaciones o acciones para hacer al guardar o antes de guardar los datos
+
+
+
 PARA EL MODULO DE USUARIOS
 
-INDEXSUCCESS.PHP:  donde se imprime el titulo para la tabla, la tabla y los botones de accion para nuevo y filtrar usuario
-_LIST.PHP: donde se imprime la tabla, con sus TH TR y la columna entera de las acciones
+---INDEXSUCCESS.PHP:  donde se imprime el titulo para la tabla, la tabla y los botones de accion para nuevo y filtrar usuario
+---_LIST.PHP: donde se imprime la tabla, con sus TH TR y la columna entera de las acciones
+
+
+---SFGUARDUSERFORMFILTER.CLASS.PHP: donde pinta el formulario para filtar usuario dandole el estilo y cambiando de nombre los labels 
 
 
 
-SFGUARDUSERFORMFILTER.CLASS.PHP: donde pinta el formulario para filtar usuario dandole el estilo y cambiando de nombre los labels 
+MODULO CHECKLIST
+---INDEXSUCCESS.PHP:  donde se imprime el titulo para la tabla, la tabla y los botones de accion para nuevo y filtrar usuario
+---

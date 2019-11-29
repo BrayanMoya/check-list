@@ -1,3 +1,4 @@
+
 <div id="content">
   <div class="container-fluid">
     <div class="row-fluid">
@@ -7,12 +8,12 @@
             <span class="icon"><i class="icon-th"></i></span>
             <h1>Lista de plantillas</h1>
           </div>
-          <div style="height:220px; " class="widget-content nopadding">
+          <div class="widget-content nopadding">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
               <div class="">
               </div>
 
-              <table class="table table-hover data-table dataTable">
+              <table class="table stylish-table color-bordered-table muted-bordered-table">
 
                 <thead>
                   <tr>
@@ -62,8 +63,13 @@
                 </tbody>
               </table>
 
+              <!--paginador-->
+              <?php include_partial('pagination', array('pager' => $pager)) ?>
+
+
               <div class="dropdown-divider"></div>
               <br>
+
               <div data-toggle="tooltip" data-placement="top" title="Opciones" class="btn-group dropright">
                 <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
                   <i class="fa fa-ellipsis-v"></i>
@@ -79,11 +85,12 @@
                 <?php include_partial('checkList/form_filter', array('url' => 'template/index', 'formFilter' => $formFilter)) ?>
 
               </div>
+
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <?php include_partial('pagination', array('pager' => $pager)) ?>

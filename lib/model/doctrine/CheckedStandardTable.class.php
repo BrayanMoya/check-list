@@ -22,18 +22,19 @@ class CheckedStandardTable extends Doctrine_Table
    * @param bool $criterionToExclude
    * @return mixed
    */
-    public static function sumWeightByCheckList($checkListId, $criterionToExclude = false)
-    {
-      $query = Doctrine_Query::create()->select('c.id, SUM(c.weight) as total')->from('CheckedStandard c')->where('c.checklist_id = ?',
-        $checkListId);
+  public static function sumWeightByCheckList($checkListId, $criterionToExclude = false)
+  {
+    $query = Doctrine_Query::create()->select('c.id, SUM(c.final_weight) as total')->from('CheckedStandard c')->where(
+      'c.checklist_id = ?',
+      $checkListId
+    );
 
-      if ($criterionToExclude)
-      {
-        $query->andWhereNotIn('c.id', [$criterionToExclude]);
-      }
-
-      return $query->fetchOne()->getTotal();
+    if ($criterionToExclude) {
+      $query->andWhereNotIn('c.id', [$criterionToExclude]);
     }
+
+    return $query->fetchOne()->getTotal();
+  }
 
   /**
    * @param $checkListId
@@ -57,5 +58,13 @@ class CheckedStandardTable extends Doctrine_Table
       ->where('c.option_selected = ?', 'true');
 
     return $query->execute(null, $hydrationMode);
+  }
+
+  public static function getCheckedStandardId($id)
+  {
+    $query = Doctrine_Query::create()
+      ->from('CheckedStandard c')
+      ->where('c.id = ?', $id);
+    return $query->fetchOne();
   }
 }

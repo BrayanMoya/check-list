@@ -24,17 +24,16 @@ class CheckList extends BaseCheckList
    */
   public function getCheckListById($checkListId)
   {
-    return Doctrine_Core::getTable('CheckList')
-      ->getCheckListById($checkListId);
+    return Doctrine_Core::getTable('CheckList')->getCheckListById($checkListId);
   }
-
+  
   /**
    * @return mixed
    */
   public function getActiveCheckListInArray($checkListId)
   {
     return Doctrine_Core::getTable('CheckList')
-    ->getActiveCheckList(3);
+      ->getActiveCheckList(3);
   }
 
   /**
@@ -42,7 +41,7 @@ class CheckList extends BaseCheckList
    */
   public function getInactiveCheckListInArray($checkListId)
   {
-    return Doctrine_Core::getTable('CheckList')->getInactiveCheckList(3);
+    return Doctrine_Core::getTable('CheckList')->getInactiveCheckList($checkListId);
   }
 
   /**
@@ -53,8 +52,7 @@ class CheckList extends BaseCheckList
     $criterias = $this->getCheckedStandards();
     //$criterias = $this->getStandards();
 
-    if (count($criterias) <= 0)
-    {
+    if (count($criterias) <= 0) {
       return true;
     }
 

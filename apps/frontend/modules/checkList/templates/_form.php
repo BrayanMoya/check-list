@@ -14,6 +14,13 @@
       </ul>
     </div>
 
+    <div class="form-group col-md-12 col-md-offset-3 <?php echo $form['template_id']->hasError() ? 'has-error' : '' ?>">
+      <?php echo $form['template_id'] ?>
+      <span class="bar"></span>
+      <?php echo $form['template_id']->renderLabel() ?>
+      <?php echo $form['template_id']->renderError() ?>
+    </div>
+
     <div class="form-group col-md-12 col-md-offset-3 <?php echo $form['name']->hasError() ? 'has-error' : '' ?>">
       <?php echo $form['name'] ?>
       <span class="bar"></span>
@@ -33,13 +40,6 @@
       <span class="bar"></span>
       <?php echo $form['observations']->renderLabel() ?>
       <?php echo $form['observations']->renderError() ?>
-    </div>
-
-    <div class="form-group col-md-12 col-md-offset-3 <?php echo $form['template_id']->hasError() ? 'has-error' : '' ?>">
-      <?php echo $form['template_id'] ?>
-      <span class="bar"></span>
-      <?php echo $form['template_id']->renderLabel() ?>
-      <?php echo $form['template_id']->renderError() ?>
     </div>
 
     <div class="form-group col-md-12 col-md-offset-3 <?php echo $form['responsible_id']->hasError() ? 'has-error' : '' ?>">
@@ -63,9 +63,9 @@
       <tr>
         <div class="row">
           <div class="col m12">
-          <td>&nbsp;<a class="btn btn-light" href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a></td>
+            <td>&nbsp;<a class="btn btn-light" href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a></td>
             <?php if (!$form->getObject()->isNew()) : ?>
-            <td>&nbsp;<?php echo link_to('Borrar', 'checkList/delete?id=' . $form->getObject()->getId(), array('class' => 'btn btn-danger'  ,'method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
+              <td>&nbsp;<?php echo link_to('Borrar', 'checkList/delete?id=' . $form->getObject()->getId(), array('class' => 'btn btn-danger', 'method' => 'delete', 'confirm' => 'Are you sure?')) ?></td>
             <?php endif; ?>
             <td><input class="btn btn-info" type="submit" value="Guardar" /></td>
 

@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col m12">
                 &nbsp;<a href="<?php echo url_for('checkList/index') ?>">Volver a la lista</a>
-                <input type="submit" value="Guardar" />
+                <input class="btn btn-info" type="submit" value="Guardar" />
 
             </div>
         </div>

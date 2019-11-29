@@ -76,4 +76,5 @@ class CheckListTable extends Doctrine_Table
   }
 
   
+  
 }

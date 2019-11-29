@@ -12,12 +12,10 @@ class CheckListForm extends BaseCheckListForm
 {
   public function configure()
   {
-    $this->widgetSchema['name'] = new sfWidgetFormInputText(array(), array('class' => 'form-control'));
-    $this->widgetSchema['observations'] = new sfWidgetFormTextarea(array(), array('class' => 'form-control'));
-    $this->widgetSchema['reference']        = new sfWidgetFormInputText(array(), array('class' => 'form-control'));
-    $this->widgetSchema['template_id']       = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Template'), 'add_empty' => false), array('class' => 'form-control'));
-    $this->widgetSchema['responsible_id']    = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Responsible'), 'add_empty' => false), array('class' => 'form-control'));
-
+    foreach ($this->getWidgetSchema()->getFields() as $field) {
+      $field->setAttribute('class', 'form-control');
+    }
+    
     $this->widgetSchema['status'] = new sfWidgetFormChoice(
       array(
         'choices' => array(1 => 'Activo', 0 => 'Inactivo'),
@@ -25,7 +23,16 @@ class CheckListForm extends BaseCheckListForm
       array('class' => 'form-control')
     );
 
+    $this->widgetSchema['name']->setLabel('Nombre');
+    $this->widgetSchema['reference']->setLabel('Referencia');
+    $this->widgetSchema['observations']->setLabel('Observaciones');
+    $this->widgetSchema['template_id']->setLabel('Plantilla');
+    $this->widgetSchema['responsible_id']->setLabel('Responsable');
+    $this->widgetSchema['status']->setLabel('Estado');
+
     $this->useFields(['name', 'reference', 'observations', 'template_id', 'responsible_id', 'status']);
+
+    sfWidgetFormSchema::setDefaultFormFormatterName('custom');
   }
 
   public function save($con = null)
@@ -44,8 +51,11 @@ class CheckListForm extends BaseCheckListForm
     // relacionamos la nueva lista de criterios con la lista de chequeo que estamos creando
     $this->getObject()->setCheckedStandards($newStandards);
 
+    
+
     // llamamos el método de la clase padre para que guarde en base de datos nuestra nueva lista de chequeo
     return parent::save($con);
+  }
     /**
     $standarList = $templateObject->getStandards();
 
@@ -66,7 +76,7 @@ class CheckListForm extends BaseCheckListForm
     $checkListObject->save();
     return parent::save($con);
      */
-  }
+  
 
   /**
    * Este método recibe una coleción de criterios  y retorna una nueva colección

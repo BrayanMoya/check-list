@@ -71,9 +71,9 @@
               <table class="table table-bordered data-table dataTable">
                 <tbody>
                   <tr>
-                    <td><a href="<?php echo url_for('checkList/edit?id=' . $check_list->getId()) ?>">Edit</a></td>
+                    <td><a href="<?php echo url_for('checkList/edit?id=' . $check_list->getId()) ?>">Editar</a></td>
                     &nbsp;
-                    <td><a href="<?php echo url_for('checkList/index') ?>">List</a></td>
+                    <td><a href="<?php echo url_for('checkList/index') ?>">Listar</a></td>
                   </tr>
                 </tbody>
               </table>

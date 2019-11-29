@@ -16,7 +16,6 @@ class Template extends BaseTemplate
 
     public function getTemplateById($templateId)
     {
-        return Doctrine_Core::getTable('Template')
-            ->getTemplateById($templateId);
+        return Doctrine_Core::getTable('Template')->getTemplateById($templateId);
     }
 }
